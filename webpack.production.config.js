@@ -45,10 +45,10 @@ var config = {
         //    add: true
         //}),
         new webpack.optimize.DedupePlugin(),
-        //new webpack.optimize.CommonsChunkPlugin({
-        //    name: 'vendor',
-        //    filename: 'vendor.bundle.js'
-        //}),
+        new webpack.optimize.CommonsChunkPlugin({
+            name: 'vendor',
+            filename: 'vendor.bundle.js'
+        }),
         new webpack.optimize.UglifyJsPlugin({
             mangle: {
                 mangle: false
