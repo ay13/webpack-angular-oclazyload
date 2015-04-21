@@ -57,6 +57,24 @@ export default (ngModule, Angular) => {
             }],
             controller: 'Page4Controller',
             controllerAs: 'test',
+
+        // the new version of ui-router wants resolve to be an object-mapping
+        // https://github.com/angular-ui/ui-router/wiki
+        resolve: {
+                foo: ['$q', '$ocLazyLoad', function($q, $ocLazyLoad) {
+                        var deferred = $q.defer();
+                        require.ensure([], function() {
+                            var module = require('./page4Module.js')(Angular);
+                            $ocLazyLoad.load({
+                                name: 'page4App' 
+                            });
+                            deferred.resolve(module);
+                        });
+                
+                        return deferred.promise;
+                }]
+            }
+/*
             resolve: ['$q', '$ocLazyLoad', function($q, $ocLazyLoad) {
                 var deferred = $q.defer();
 
@@ -70,6 +88,7 @@ export default (ngModule, Angular) => {
 
                 return deferred.promise;
             }]
+*/
         });
     }]);
 }
