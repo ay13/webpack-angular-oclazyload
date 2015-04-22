@@ -8,9 +8,9 @@ export default (ngModule, Angular) => {
         $stateProvider.state('page1', {
             url: '/page1',
             templateProvider: ['$q', function($q) {
-                var deferred = $q.defer();
+                let deferred = $q.defer();
                 require.ensure(['./page1.html'], function() {
-                    var template = require('./page1.html');
+                    let template = require('./page1.html');
                     deferred.resolve(template);
                 });
                 return deferred.promise;
@@ -22,9 +22,9 @@ export default (ngModule, Angular) => {
         }).state('page2', {
             url: '/page2',
             templateProvider: ['$q', function($q) {
-                var deferred = $q.defer();
+                let deferred = $q.defer();
                 require.ensure(['./page2.html'], function() {
-                    var template = require('./page2.html');
+                    let template = require('./page2.html');
                     deferred.resolve(template);
                 });
                 return deferred.promise;
@@ -36,9 +36,9 @@ export default (ngModule, Angular) => {
         }).state('page3', {
             url: '/page3',
             templateProvider: ['$q', function($q) {
-                var deferred = $q.defer();
+                let deferred = $q.defer();
                 require.ensure(['./page3.html'], function() {
-                    var template = require('./page3.html');
+                    let template = require('./page3.html');
                     deferred.resolve(template);
                 });
                 return deferred.promise;
@@ -50,7 +50,7 @@ export default (ngModule, Angular) => {
             templateProvider: ['$q', function($q) {
                 let deferred = $q.defer();
                 require.ensure(['./page4.html'], function() {
-                    var template = require('./page4.html');
+                    let template = require('./page4.html');
                     deferred.resolve(template);
                 });
                 return deferred.promise;
@@ -62,9 +62,9 @@ export default (ngModule, Angular) => {
         // https://github.com/angular-ui/ui-router/wiki
         resolve: {
                 foo: ['$q', '$ocLazyLoad', function($q, $ocLazyLoad) {
-                        var deferred = $q.defer();
+                        let deferred = $q.defer();
                         require.ensure([], function() {
-                            var module = require('./page4Module.js')(Angular);
+                            let module = require('./page4Module.js')(Angular);
                             $ocLazyLoad.load({
                                 name: 'page4App' 
                             });
