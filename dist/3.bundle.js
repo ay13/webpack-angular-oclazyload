@@ -1,1 +1,0 @@
-webpackJsonp([3],{10:function(e,t,n){e.exports="<h1>page 2</h1>\n<h2>{{test.title}}</h2>"}});

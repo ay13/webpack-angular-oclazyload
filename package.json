@@ -4,9 +4,9 @@
   "description": "",
   "main": "webpack.config.js",
   "scripts": {
-    "build": "node node_modules/.bin/webpack",
-    "dev": "node node_modules/.bin/webpack-dev-server --devtool eval --progress --colors --content-base build",
-    "deploy": "NODE_ENV=production node node_modules/.bin/webpack --config webpack.production.config.js"
+    "build": "webpack",
+    "dev": "webpack-dev-server --devtool eval --progress --colors --content-base build",
+    "deploy": "NODE_ENV=production webpack --config webpack.production.config.js"
   },
   "author": "",
   "license": "ISC",
