@@ -1,5 +1,5 @@
 var webpack = require('webpack');
-//var ngAnnotatePlugin = require('ng-annotate-webpack-plugin');
+var ngAnnotatePlugin = require('ng-annotate-webpack-plugin');
 
 var config = {
     entry: {
@@ -41,9 +41,9 @@ var config = {
     },
 
     plugins: [
-        //new ngAnnotatePlugin({
+        // new ngAnnotatePlugin({
         //    add: true
-        //}),
+        // }),
         new webpack.optimize.DedupePlugin(),
         new webpack.optimize.CommonsChunkPlugin({
             name: 'vendor',
@@ -53,6 +53,9 @@ var config = {
             mangle: {
                 mangle: false
             }
+        }),
+         new webpack.DefinePlugin({
+          ON_DEMO: process.env.NODE_ENV === 'demo'
         })
     ]
 };

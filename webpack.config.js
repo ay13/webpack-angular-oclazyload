@@ -44,6 +44,9 @@ var config = {
         new webpack.optimize.CommonsChunkPlugin({
             name: 'vendor',
             filename: 'vendor.bundle.js'
+        }),
+        new webpack.DefinePlugin({
+          ON_DEMO: process.env.NODE_ENV === 'demo'
         })
     ]
 };
