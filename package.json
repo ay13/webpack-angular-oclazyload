@@ -8,7 +8,7 @@
     "dev": "webpack-dev-server --devtool eval --progress --colors --content-base build",
     "demo": " NODE_ENV=demo webpack-dev-server --devtool eval --progress --colors --content-base build",
     "deploy": "NODE_ENV=production webpack --config webpack.production.config.js",
-    "deploy_demo": "NODE_ENV=production webpack --config webpack.production.config.js"
+    "deploy_demo": "NODE_ENV=demo webpack --config webpack.production.config.js"
   },
   "author": "",
   "license": "ISC",

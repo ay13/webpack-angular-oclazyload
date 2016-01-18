@@ -33,7 +33,7 @@ export default (ngModule, Angular) => {
                     templateProvider: ['$q', function ($q) {
                         let deferred = $q.defer();
                         require.ensure(['./page4/page4.html'], function () {
-                            let template = require('./ page4/page4.html');
+                            let template = require('./page4/page4.html');
                             deferred.resolve(template);
                         });
                         return deferred.promise;
